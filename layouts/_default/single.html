@@ -49,6 +49,30 @@
 		{{- if eq ($.Scratch.Get "isDisqus") true -}}
 		{{- partial "disqus.html" . -}}
 		{{- end -}}
+
+		{{- $.Scratch.Set "isUtter" true -}}
+
+		<!-- Disable if content type is excluded in config -->
+		{{- if and (isset .Params "type") (in .Site.Params.disableDisqusTypes .Params.type) -}}
+		{{- $.Scratch.Set "isUtter" false -}}
+		{{- end -}}
+
+		<!-- Check if content has flag to enable/disable disqus explicitly -->
+		{{- if and (isset .Params "utter") (eq .Params.utter false) -}}
+		{{- $.Scratch.Set "isUtter" false -}}
+		{{- else if and (isset .Params "utter") (eq .Params.utter true) -}}
+		{{- $.Scratch.Set "isUtter" true -}}
+		{{- end -}}
+
+		<!-- Check if disqus short name is given -->
+		{{ if not .Site.Params.Utter}}
+		{{- $.Scratch.Set "isUtter" false -}}
+		{{ end }}
+
+		{{- if eq ($.Scratch.Get "isUtter") true -}}
+		{{- partial "utterances.html" . -}}
+		{{- end -}}
+
 	</div>
 	{{ partial "footer.html" . }}
 </body>
