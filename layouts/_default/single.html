@@ -12,9 +12,8 @@
 				{{ $json := .Site.Data.statics }}
 				{{ $pv := index $json .RelPermalink}}
 				{{ with $pv}}
-					{{print "<code>Page Views: " . " </code>" | safeHTML}}
+					{{print "<a>Page Views: " . " </a>" | safeHTML}}
 				{{ end}}
-
 			</div>
 		</div>
 
