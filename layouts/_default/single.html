@@ -8,6 +8,13 @@
 		<div class="post-header">
 			<h1 class="title">{{ .Title }}</h1>
 			<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			<div class="meta">
+				{{ $json := getJSON ("statics.json" | absURL) }}
+				{{ $pv := index $json "10101postslinkedlist"}}
+				{{ with $pv}}
+					{{print "<code>Page Views: " . " </code>" | safeHTML}}
+				{{ end}}
+			</div>
 		</div>
 
 		<div class="markdown">
