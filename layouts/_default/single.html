@@ -7,10 +7,10 @@
 
 		<div class="post-header">
 			<h1 class="title">{{ .Title }}</h1>
-			<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
-			<div class="meta">
+			<div class="meta" style="display: inline;">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			<div class="meta" style="display: inline;">
 				{{ $json := getJSON ("statics.json" | absURL) }}
-				{{ $pv := index $json "10101postslinkedlist"}}
+				{{ $pv := index $json .RelPermalink}}
 				{{ with $pv}}
 					{{print "<code>Page Views: " . " </code>" | safeHTML}}
 				{{ end}}
