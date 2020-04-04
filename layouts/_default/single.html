@@ -9,11 +9,12 @@
 			<h1 class="title">{{ .Title }}</h1>
 			<div class="meta" style="display: inline;">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
 			<div class="meta" style="display: inline;">
-				{{ $json := getJSON ("statics.json" | absURL) }}
+				{{ $json := .Site.Data.statics }}
 				{{ $pv := index $json .RelPermalink}}
 				{{ with $pv}}
 					{{print "<code>Page Views: " . " </code>" | safeHTML}}
 				{{ end}}
+
 			</div>
 		</div>
 
