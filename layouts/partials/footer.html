@@ -5,8 +5,8 @@
 			{{ $pv := index $json "totalViews"}}
 			{{ $sessions := index $json "totalSessions"}}
 			{{print "<a>Total Views: " $pv " </a>" | safeHTML}}
-			{{print "<a>Total Visitors: " $sessions " </a>" | safeHTML}}
-			{{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+			{{print "&nbsp;<a>Total Visitors: " $sessions " </a>" | safeHTML}}
+			{{ with .Site.Copyright }} {{ . }} | {{ end }} <img src="https://img.shields.io/badge/License-CC BY 4.0-lightgrey.svg" alt="ss" style="zoom:67%;display: inline;margin: 0px 5px;" /> | <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 		</div>
 	</nav>
 </div>
