@@ -6,7 +6,7 @@
 			{{ $sessions := index $json "totalSessions"}}
 			{{print "<a>Total Views: " $pv " </a>" | safeHTML}}
 			{{print "&nbsp;<a>Total Visitors: " $sessions " </a>" | safeHTML}}
-			{{ with .Site.Copyright }} {{ . }} | {{ end }} <img src="https://img.shields.io/badge/License-CC BY 4.0-lightgrey.svg" alt="ss" style="zoom:67%;display: inline;margin: 0px 5px;" /> | <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+			{{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY%20NC%20ND%204.0-green?link=http://creativecommons.org/licenses/by-nc-nd/4.0/" alt="CC BY NC ND 4.0" style="zoom:67%;display: inline;margin: 0px 5px;" /></a> | <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 		</div>
 	</nav>
 </div>
