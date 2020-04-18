@@ -4,8 +4,8 @@
 		{{ $pv := index $json "totalViews"}}
 		{{ $sessions := index $json "totalSessions"}}
 		<div class="badge">
-		<img src="https://img.shields.io/badge/PV-{{$pv}}-green" alt="pv" style="" />
-		<img src="https://img.shields.io/badge/UV-{{$sessions}}-green" alt="pv" style="" />
+		<img src="https://img.shields.io/badge/PV-{{$pv}}-green" alt="pv"/>
+		<img src="https://img.shields.io/badge/UV-{{$sessions}}-green" alt="uv"/>
 		<img src="https://img.shields.io/badge/License-CC%20BY%20NC%20ND%204.0-green?link=http://creativecommons.org/licenses/by-nc-nd/4.0/" alt="CC BY NC ND 4.0" style="" />
 		<span>
 			| {{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
