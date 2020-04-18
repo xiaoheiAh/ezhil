@@ -1,12 +1,15 @@
 <div class="footer wrapper">
 	<nav class="nav">
-		<div>
-			{{ $json := .Site.Data.statics }}
-			{{ $pv := index $json "totalViews"}}
-			{{ $sessions := index $json "totalSessions"}}
-			{{print "<a>Total Views: " $pv " </a>" | safeHTML}}
-			{{print "&nbsp;<a>Total Visitors: " $sessions " </a>" | safeHTML}}
-			{{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY%20NC%20ND%204.0-green?link=http://creativecommons.org/licenses/by-nc-nd/4.0/" alt="CC BY NC ND 4.0" style="zoom:67%;display: inline;margin: 0px 5px;" /></a> | <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+		{{ $json := .Site.Data.statics }}
+		{{ $pv := index $json "totalViews"}}
+		{{ $sessions := index $json "totalSessions"}}
+		<div class="badge">
+		<img src="https://img.shields.io/badge/PV-{{$pv}}-green" alt="pv" style="" />
+		<img src="https://img.shields.io/badge/UV-{{$sessions}}-green" alt="pv" style="" />
+		<img src="https://img.shields.io/badge/License-CC%20BY%20NC%20ND%204.0-green?link=http://creativecommons.org/licenses/by-nc-nd/4.0/" alt="CC BY NC ND 4.0" style="" />
+		<span>
+			| {{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+		</span>
 		</div>
 	</nav>
 </div>
